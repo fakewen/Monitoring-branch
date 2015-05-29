@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dependencies>
+   <includePath signature="/I../../architecture/avr/c /I../../platform/arduino/c /I../../config/wunode/c /I../../core/c /Ic/common /Ic/arduino /Ibuild /I../base/build /I../darjeeling/build /I../darjeeling2/build /I../radio/build">
+      <source file="../../../../../architecture/avr/c/program_mem.h" lastModified="1487c8ca850">
+      </source>
+      <source file="../../../../../core/c/djtimer.h" lastModified="1487c8ca468">
+         <include file="../../../../../core/c/types.h"/>
+      </source>
+      <source file="../../../c/arduino/uart.c" lastModified="1487c8cac38">
+         <include file="../../../c/common/uart.h"/>
+         <include file="../../../../../core/c/types.h"/>
+         <include file="../../../../../core/c/djtimer.h"/>
+      </source>
+      <source file="../../../c/common/uart_init.c" lastModified="1487c8ca468">
+      </source>
+      <source file="../../../../../core/c/types.h" lastModified="1487c8ca468">
+         <include file="../../../../../config/wunode/c/config.h"/>
+         <include file="../../../../../architecture/avr/c/program_mem.h"/>
+         <include file="../../../../../architecture/avr/c/pointerwidth.h"/>
+         <sysinclude file="../../../../../../../../../../usr/include/stddef.h"/>
+         <sysinclude file="../../../../../../../../../../usr/include/stdbool.h"/>
+         <sysinclude file="../../../../../../../../../../usr/include/stdint.h"/>
+      </source>
+      <source file="../../../../../architecture/avr/c/pointerwidth.h" lastModified="1487c8ca468">
+      </source>
+      <source file="../../../../../config/wunode/c/config.h" lastModified="1487c8ca850">
+      </source>
+      <source file="../../../c/common/uart.h" lastModified="1487c8ca468">
+         <include file="../../../../../core/c/types.h"/>
+      </source>
+   </includePath>
+</dependencies>

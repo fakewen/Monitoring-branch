@@ -1,0 +1,123 @@
+<!doctype html>
+<link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="/static/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/index2.js"></script>
+<title>Welcome to Wukong Master</title>
+
+  <head>
+<script>
+function loadXMLDoc()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("POST","http://c.csie.org/~fakewen/ajax_info.txt",true);
+xmlhttp.send();
+}
+</script>
+
+</head>
+<div id="myDiv"><h2>h2</h2></div>
+<button type="button" onclick="loadXMLDoc()">Change Content</button>
+
+
+<div id="div_changesize" class="container" style="margin-top: 50px">
+
+  <header class="jumbotron subhead">
+
+    <!--<meta http-equiv="refresh" content="0.5">-->
+
+    <h1>Sensing Data review</h1>
+    <div class="row">
+      <div class="span12">
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="span12">
+        <table class="table table-condensed">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for index, app in enumerate(applications) %}
+            <tr class="application" id="app_{{ index+1 }}">
+              <td><a href="/applications/{{ index }}">{{ index+1 }}</a></td>
+              <td id="docid">{{ app.id }}</td>
+              <td>{{ app.sensor }}</td>
+              <td>{{ app.value }}</td>
+            </tr>
+            {% end %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script>
+    
+      function aa(){
+        var myObj = document.getElementById("docid");
+        myObj.innerHTML='Now we can change text';
+        myObj.style.color="red";
+        //alert(myObj.style.color);
+      }
+      aa();
+/*      
+$.ajax({
+  url: "/api/getWeather",
+  data: {
+    zipcode: 97201
+  },
+  success: function( data ) {
+    var myObj = document.getElementById("docid");
+        myObj.style.color="red";
+        alert(myObj.style.color);
+  },
+  error:function(xhr, ajaxOptions, thrownError){ 
+                    alert(xhr.status); 
+                    alert(thrownError); 
+                 }
+});*/
+    </script>
+
+
+
+<p>Hello</p>
+<span>Hello Again</span>
+ 
+<script>
+
+/*
+$.ajax({
+  type: "POST",
+  url: "~/pythoncode.py",
+  data: { }//param: text
+}).done(function( o ) {
+   $( "p" ).add( "span" ).css( "background", "yellow" );
+});
+*/
+</script>
+
+  </header>
+
+</div>
+
+

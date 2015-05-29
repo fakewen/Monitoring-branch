@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="/static/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="http://d3js.org/d3.v2.js"></script>
+
+    </head>
+    <body>
+<script>//load NodeID/PortID
+
+   var len;
+  var node_id=[];
+  var port_id=[];
+   var op=[];
+   var ppnum=[];
+   for(i=0;i<6;i++){
+        ppnum.push(0);
+   }
+   var tt=0;
+function init(){
+   {% for index, app in enumerate(applications) %}
+
+              len={{index}}+1;
+              //len='{{ applications[index].id }}';
+              var str='{{ app.id }}';
+              var res=str.split('_');
+              node_id.push(res[0]);
+              port_id.push(res[1]);
+              op.push(0);
+              var i = 0;
+
+    {% end %}
+
+}
+</script>
+<script type="text/javascript">//update sensing data
+    function loadXMLDoc()
+    {
+        if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && (xmlhttp.status==200 || xmlhttp.status==304))
+            {
+                console.log(xmlhttp.responseText);
+              var str_tmp=xmlhttp.responseText;
+              var s = str_tmp.indexOf("[");//16
+              var e = str_tmp.indexOf("]");//20
+              var res=str_tmp.substring(s+1, e).split(",");
+
+for (i=0;i<len;i++){
+    op[i]=res[i];
+}
+console.log(res[len+1]);
+
+for (i=0;i<6;i++){
+    ppnum[i]=parseInt(res[len+i]);
+}
+console.log("%d,%d,%d,%d,%d,%d,",ppnum[0],ppnum[1],ppnum[2],ppnum[3],ppnum[4],ppnum[5]);
+            }//console.log("out");
+        }
+        xmlhttp.open("GET","getvalue_array",true);
+        xmlhttp.send();
+    }
+</script>
+
+        <img src="/static/images/planar.png" width=1000 height=800 style="position:absolute; left:20px; top:20px; z-index:-1;"/>
+        <script type="text/javascript">
+init();
+var circleData = [
+  { "cx": 130, "cy": 230, "radius": 70, "color" : "yellow", "opacity" : 0.5, "z":2 , "idx":0 },
+  { "cx": 550, "cy": 100, "radius": 70, "color" : "yellow", "opacity" : 1, "z":2 , "idx":1},
+  { "cx": 200, "cy": 420, "radius": 70, "color" : "yellow", "opacity" : 0.7, "z":2 , "idx":2},
+  { "cx": 580, "cy": 400, "radius": 70, "color" : "yellow", "opacity" : 0.3, "z":2 , "idx":3}];
+  var ppData = [
+  { "cx": 130, "cy": 230, "w":70,"h":70, "idx":0 },
+  { "cx": 550, "cy": 100, "w":70,"h":70, "idx":1},
+  { "cx": 200, "cy": 420, "w":70,"h":70, "idx":2},
+  { "cx": 580, "cy": 400, "w":70,"h":70, "idx":3}];
+var svgContainer = d3.select("body").append("svg")
+                                     .attr("width",1000)
+                                     .attr("height",800) 
+                        .style("z-index", 2);
+
+var circles = svgContainer.selectAll("circle")
+                           .data(circleData)
+                           .enter()
+                           .append("circle");
+
+var circleAttributes = circles
+                        .attr("cx", function (d) { return d.cx; })
+                        .attr("cy", function (d) { return d.cy; })
+                        .attr("r", function (d) { return d.radius; })
+                        .attr("fill-opacity", function (d) { return d.opacity; })
+                        .style("fill", function (d) { return d.color; })            
+                        .style("position", "absolute")
+                        .style("z-index", 2);
+
+
+
+
+        </script>
+    </body>
+<script type="text/javascript">
+    $(document).ready(function(){
+      refreshTable();
+    });
+
+    function refreshTable(){
+loadXMLDoc();
+        
+         d3.select("svg").remove();
+        svgContainer = d3.select("body").append("svg")
+                                     .attr("width",1000)
+                                     .attr("height",800) 
+                        .style("z-index", 2);
+             d3.select("g").remove();           
+var g = svgContainer.append("g");
+var img = g.append("svg:image")
+    .attr("xlink:href", "http://www.clipartbest.com/cliparts/Kin/M77/KinM77yiq.png")
+    .attr("width", 70)
+    .attr("height", 70)
+    .attr("x", 200)
+    .attr("y",200);
+    img = g.append("svg:image")
+    .attr("xlink:href", "http://www.clipartbest.com/cliparts/Kin/M77/KinM77yiq.png")
+    .attr("width", 70)
+    .attr("height", 70)
+    .attr("x", 400)
+    .attr("y",200);
+    img = g.append("svg:image")
+    .attr("xlink:href", "http://www.clipartbest.com/cliparts/Kin/M77/KinM77yiq.png")
+    .attr("width", 70)
+    .attr("height", 70)
+    .attr("x", 600)
+    .attr("y",200);
+    img = g.append("svg:image")
+    .attr("xlink:href", "http://www.clipartbest.com/cliparts/Kin/M77/KinM77yiq.png")
+    .attr("width", 70)
+    .attr("height", 70)
+    .attr("x", 200)
+    .attr("y",300);
+    img = g.append("svg:image")
+    .attr("xlink:href", "http://www.clipartbest.com/cliparts/Kin/M77/KinM77yiq.png")
+    .attr("width", 70)
+    .attr("height", 70)
+    .attr("x", 400)
+    .attr("y",300);
+    img = g.append("svg:image")
+    .attr("xlink:href", "http://www.clipartbest.com/cliparts/Kin/M77/KinM77yiq.png")
+    .attr("width", 70)
+    .attr("height", 70)
+    .attr("x", 600)
+    .attr("y",300);
+var pplt=g.append("text")
+    .attr("x", 260)
+    .attr("y", 350)
+    .text( "X".concat(ppnum[0].toString()))
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px")
+    .attr("fill", "red");
+    pplt=g.append("text")
+    .attr("x", 260)
+    .attr("y", 250)
+    .text( "X".concat(ppnum[1].toString()))
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px")
+    .attr("fill", "red");
+    pplt=g.append("text")
+    .attr("x", 460)
+    .attr("y", 350)
+    .text( "X".concat(ppnum[2].toString()))
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px")
+    .attr("fill", "red");
+    pplt=g.append("text")
+    .attr("x", 460)
+    .attr("y", 250)
+    .text( "X".concat(ppnum[3].toString()))
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px")
+    .attr("fill", "red");
+    pplt=g.append("text")
+    .attr("x", 660)
+    .attr("y", 350)
+    .text( "X".concat(ppnum[4].toString()))
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px")
+    .attr("fill", "red");
+    pplt=g.append("text")
+    .attr("x", 660)
+    .attr("y", 250)
+    .text( "X".concat(ppnum[5].toString()))
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px")
+    .attr("fill", "red");
+
+        pplt=g.append("text")
+    .attr("x", 130)
+    .attr("y", 230)
+    .text( op[0])
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px")
+    .attr("fill", "red");
+        pplt=g.append("text")
+    .attr("x", 550)
+    .attr("y", 100)
+    .text( op[1])
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px")
+    .attr("fill", "red");
+        pplt=g.append("text")
+    .attr("x", 200)
+    .attr("y", 420)
+    .text( op[2])
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px")
+    .attr("fill", "red");
+        pplt=g.append("text")
+    .attr("x", 580)
+    .attr("y", 400)
+    .text( op[3])
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px")
+    .attr("z-index",4)
+    .attr("fill", "red");
+
+var circles=g.append("circle")
+    .attr("cx", 130)
+    .attr("cy", 230)
+    .attr( "r",70)
+    .attr("fill-opacity",0.5)
+    .style("position", "absolute")
+    .style("fill", "yellow");
+    circles=g.append("circle")
+    .attr("cx", 550)
+    .attr("cy", 100)
+    .attr( "r",70)
+    .attr("fill-opacity",0.5)
+    .style("position", "absolute")
+    .style("fill", "yellow");
+    circles=g.append("circle")
+    .attr("cx", 200)
+    .attr("cy", 420)
+    .attr( "r",70)
+    .attr("fill-opacity",0.5)
+    .style("position", "absolute")
+    .style("fill", "yellow");
+    circles=g.append("circle")
+    .attr("cx", 580)
+    .attr("cy", 400)
+    .attr( "r",70)
+    .attr("fill-opacity",0.5)
+    .style("position", "absolute")
+    .style("fill", "yellow");
+
+ /*   
+        circles = svgContainer.selectAll("circle")
+                           .data(circleData)
+                           .enter()
+                           .append("circle");
+
+        circleAttributes = circles
+                        .attr("cx", function (d) { return d.cx; })
+                        .attr("cy", function (d) { return d.cy; })
+                        .attr("r", function (d) { return d.radius; })
+                        .attr("fill-opacity", function (d) { return op[d.idx]/255; })
+                        .style("fill", function (d) { return d.color; })            
+                        .style("position", "absolute");
+                        //.style("z-index", 2);
+
+        var text= svgContainer.selectAll("text")
+                        .data(circleData)
+                        .enter()
+                        .append("text");
+
+        var textLabels = text
+                 .attr("x", function(d) { return d.cx-10; })
+                 .attr("y", function(d) { return d.cy; })
+                 .text( function (d) { return op[d.idx]; })
+                 .attr("font-family", "sans-serif")
+                 .attr("font-size", "20px")
+                 .attr("fill", "red");
+*/
+        setTimeout(refreshTable, 300);
+    }
+</script>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>  
+<link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="/static/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/index2.js"></script>
+<script>
+  var len;
+  var node_id=[];
+  var port_id=[];
+  var value_chart=[];
+  var time_chart=[];
+  var count;
+  var str="3_2";
+console.log("OK");
+{% for index, app in enumerate(applications) %}
+
+              len={{index}}+1;
+              console.log(len);
+              str='{{ app.id }}';
+              var res=str.split('_');
+              node_id.push(res[0]);
+              port_id.push(res[1]);
+              var i = 0;
+              count={{ app.count }};
+              console.log(count);
+              {% for value in app.value_array %}
+                value_chart.push({{value}});
+                //console.log(value_chart[0]);
+              {% end %}
+              
+              {% for value2 in app.time_array %}
+                time_chart.push("{{value2}}");
+                //console.log(time_chart[0]);
+              {% end %}
+
+{% end %}
+
+//creat data
+  var limit = count;    
+
+  var y = 0;
+  var data = []; var dataSeries = { type: "line" };
+  var dataPoints = [];
+  var d=new Date(time_chart[0]);
+  var lastday=d.setDate( d.getDate( ) - 1 );
+  for (var i = 0; i < count; i++) {
+    y = value_chart[i];
+    if(y>255){y=255}
+    dateTime = new Date(time_chart[i]);
+    /*
+    if(dateTime<(lastday) ){
+      continue;
+    }*/
+    dataPoints.push({
+      x: dateTime,
+      y: y
+    });
+  }
+
+  dataSeries.dataPoints = dataPoints;
+  data.push(dataSeries); 
+
+</script>
+<form>
+  <label><input type="radio" name="mode" value="1hour"> 1 hour</label>
+  <label><input type="radio" name="mode" value="1day" > 1 day</label>
+  <label><input type="radio" name="mode" value="1week" > 1 week</label>
+  <label><input type="radio" name="mode" value="1month" > 1 month</label>
+  <label><input type="radio" name="mode" value="Total" checked> Total</label>
+</form>
+<script type="text/javascript">
+var timeout = setTimeout(function() {
+  d3.select("input[value=\"1hour\"]").property("checked", true);
+}, 2000);
+
+console.log("FINE");
+window.onload = function () {
+  var chart = new CanvasJS.Chart("chartContainer",
+  {
+    zoomEnabled: true,
+    //animationEnabled: true,
+    title:{
+      text: "Monitor Device "+ str +" Data! There are "+count+" items in current scope."
+    },
+    axisX :{
+      labelAngle: -30
+    },
+    axisY :{
+      includeZero:false
+    },
+    data: data  
+  });
+  /*
+  var lastday=d.setDate( d.getDate( ) - 1 );
+  for (var i = 0; i < count; i++) {
+    y = value_chart[i];
+    if(y>255){y=255}
+    dateTime = new Date(time_chart[i]);
+    
+    if(dateTime<(lastday) ){
+      continue;
+    }
+    dataPoints.push({
+      x: dateTime,
+      y: y
+    });
+  }
+  dataSeries.dataPoints = dataPoints;
+  data=[];
+  data.push(dataSeries); */
+  chart.render();
+}
+
+              
+
+</script>
+<script type="text/javascript" src="/static/js/canvasjs.min.js"></script></head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+</body>
+</html>

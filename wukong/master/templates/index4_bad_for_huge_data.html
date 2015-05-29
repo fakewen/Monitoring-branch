@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Line Chart</title>
+    <script src="/static/js/Chart.js"></script>
+  </head>
+  <body>
+    <div style="width:70%">
+      <div>
+        <canvas id="canvas" height="600" width="900"></canvas>
+      </div>
+    </div>
+<script>
+  var len;
+  var node_id=[];
+  var port_id=[];
+  var value_chart=[];
+  //for (i = 0; i < 50; ++i) value_chart[i] = 0;
+  var tt=1;
+
+{% for index, app in enumerate(applications) %}
+
+              len={{index}}+1;
+              //len='{{ applications[index].id }}';
+              var str='{{ app.id }}';
+              var res=str.split('_');
+              node_id.push(res[0]);
+              port_id.push(res[1]);
+              var i = 0;
+              {% for value in applications[index].value_array %}
+                //value_chart.push({{value}});
+              {% end %}
+
+{% end %}
+
+
+</script>
+
+  <script>
+    var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+    var value_array=[0,2,3,4,5,6,255,200,255];
+    for(i=0;i<1000;i++){
+      value_array.push(100);
+    }
+    var time_array=["2015-1-28-16-31-04","asd","March","April","May","June","July","8"];
+        for(i=0;i<1000;i++){
+      time_array.push("2015-1-28-16-31-04");
+    }
+    var lineChartData = {
+      labels : time_array,
+      datasets : [
+        {
+          label: "Light1",
+          fillColor : "rgba(220,220,220,0.2)",
+          strokeColor : "rgba(220,220,220,1)",
+          pointColor : "rgba(220,220,220,1)",
+          pointStrokeColor : "#fff",
+          pointHighlightFill : "#fff",
+          pointHighlightStroke : "rgba(220,220,220,1)",
+          data : value_array
+        },
+        {
+          label: "Light2",
+          fillColor : "rgba(151,187,205,0.2)",
+          strokeColor : "rgba(151,187,205,1)",
+          pointColor : "rgba(151,187,205,1)",
+          pointStrokeColor : "#fff",
+          pointHighlightFill : "#fff",
+          pointHighlightStroke : "rgba(151,187,205,1)",
+          data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+        }
+      ]
+
+    }
+
+  window.onload = function(){
+    var ctx = document.getElementById("canvas").getContext("2d");
+    window.myLine = new Chart(ctx).Line(lineChartData, {
+      responsive: true
+    });
+  }
+
+
+  </script>
+  </body>
+</html>

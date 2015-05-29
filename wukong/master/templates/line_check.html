@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>  
+<link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="/static/js/canvasjs.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+<script>
+var time_scale="day";
+  var len;
+  var node_id=[];
+  var port_id=[];
+  var value_chart=[];
+  var time_chart=[];
+  var count=[];
+  var hrago_count=[];
+  var str="Line_All";
+console.log("OK");
+{% for index, app in enumerate(applications) %}
+var value_chart_tmp=[];
+var time_chart_tmp=[];
+              len={{index}}+1;
+              hrago_count.push({{ app.hrago_count }});
+              console.log("index=%d; hr_count=%d; test_count=%d;hrago_count=%d",len,hrago_count[{{index}}],{{ app.test_count1 }},hrago_count[{{index}}]);
+              str='{{ app.id }}';
+              var res=str.split('_');
+              node_id.push(res[0]);
+              port_id.push(res[1]);
+              var i = 0;
+              count.push({{ app.count }});
+              console.log(count[len-1]);
+              {% for value in app.value_array %}
+                value_chart_tmp.push({{value}});
+              {% end %}
+              value_chart.push(value_chart_tmp);
+              {% for value2 in app.time_array %}
+                time_chart_tmp.push("{{value2}}");
+              {% end %}
+              time_chart.push(time_chart_tmp);
+
+{% end %}
+
+
+//creat data
+var data = []; //1 week  
+var data_hr=[]; //1 hr  
+for(var iter=0;iter<len;iter++){//each device
+  var y = 0;
+  var data_tmp = []; var dataSeries = { type: "scatter" };
+  var dataPoints = [];
+  var data_tmp_hr = []; var dataSeries_hr = { type: "scatter" };//duplicate for hr
+  var dataPoints_hr = [];
+
+  //var d=new Date(time_chart[iter]);
+  //var lastday=d.setDate( d.getDate( ) - 1 );
+  for (var i = 0; i < count[iter]; i++) {//each device's data count
+    y = value_chart[iter][i];
+    if(y>255){y=255}
+    dateTime = new Date(time_chart[iter][i]);
+    dataPoints.push({
+      x: dateTime,
+      y: y
+    });
+    
+
+  }
+   //add Null point for 1hr/1day's X-margin
+
+  /*
+  dataSeries.showInLegend="true";
+  dataSeries.markerType="square";
+  dataSeries.markerSize=1;
+  dataSeries.legendText="square";
+  */
+
+  dataSeries.color= "#778899";
+  dataSeries.legendText="Each triangle represents one data";
+  dataSeries.showInLegend= "true";
+  dataSeries.markerType= "triangle";
+  dataSeries.dataPoints = dataPoints;
+  data_tmp.push(dataSeries); 
+  data.push(data_tmp);
+  //duplicate for hr
+  /*
+  dataSeries_hr.showInLegend="true";
+  dataSeries_hr.markerType="square";
+  dataSeries_hr.markerSize=1;
+  dataSeries_hr.legendText="square";
+  */
+  dataSeries_hr.color= "#778899";
+  dataSeries_hr.legendText="Each triangle represents one data";
+  dataSeries_hr.showInLegend= "true";
+  dataSeries_hr.markerType= "triangle";
+  dataSeries_hr.dataPoints = dataPoints_hr;
+  data_tmp_hr.push(dataSeries_hr); 
+  data_hr.push(data_tmp_hr);
+}
+//var b = $.extend(true, [], a);
+var data_dump=$.extend(true, [], data);
+console.log("length1111?data=%d;data_dump=%d",data[0][0].dataPoints.length,data_dump[0][0].dataPoints.length);
+</script>
+<form>
+  <label id="hr"><input type="radio" name="mode" value="1hour"> 1 hour</label>
+  <label id="d"><input type="radio" name="mode" value="1day" checked> 1 day</label>
+  <label id="w"><input type="radio" name="mode" value="1week" > 1 week</label>
+  <label id="m"><input type="radio" name="mode" value="1month" > 1 month</label>
+  <label id="c1"><input type="radio" name="mode" value="c2" > Date From: <input type="text" id="datepicker"><input type="text" id="timepicker" style="color:#888;" value="HH:MM:SS" onfocus="inputFocus(this)" onblur="inputBlur(this)">to: <input type="text" id="datepicker_end"><input type="text" id="timepicker_end"  style="color:#888;" value="HH:MM:SS" onfocus="inputFocus(this)" onblur="inputBlur(this)">
+  <input type="button" id="submit" value="Submit"></label>
+</form>
+<form>
+
+</form> 
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+
+<script>
+function inputFocus(i){
+    if(i.value==i.defaultValue){ i.value=""; i.style.color="#000"; }
+}
+function inputBlur(i){
+    if(i.value==""){ i.value=i.defaultValue; i.style.color="#888"; }
+}
+  $(function() {
+    $( "#datepicker" ).datepicker({
+      changeMonth:true,
+      changeYear:true
+    });
+  });
+  $(function() {
+    $( "#datepicker_end" ).datepicker({
+      changeMonth:true,
+      changeYear:true
+    });
+  });
+  /*
+  var date=$("#datepicker1").datepicker("getDate");
+  var date_str=$.datepicker.formatDate("yy-mm-dd", date);
+var date_parsed=$.datepicker.parseDate("yy-mm-dd", date_str);
+var week=$.datepicker.iso8601Week(date);
+var msg=date_str + "is the " + week + "week<br>" +
+              date_str + "context: " + date_parsed;
+  console.log(date);*/
+</script>
+
+
+<script type="text/javascript">
+/*
+var timeout = setTimeout(function() {
+  document.getElementById("hr").checked = true;
+}, 2000);*/
+
+
+console.log("FINE");
+text_h=["Monitor Device "+ "4_2" +" Data! There are "+hrago_count[0]+" items in current scope.","Monitor Device "+ "6_2" +" Data! There are "+hrago_count[1]+" items in current scope.","Monitor Device "+ "7_2" +" Data! There are "+hrago_count[2]+" items in current scope.","Monitor Device "+ "8_2" +" Data! There are "+hrago_count[3]+" items in current scope."];
+text=["Monitor Device "+ "4_2" +" Data! There are "+count[0]+" items in current scope.","Monitor Device "+ "6_2" +" Data! There are "+count[1]+" items in current scope.","Monitor Device "+ "7_2" +" Data! There are "+count[2]+" items in current scope.","Monitor Device "+ "8_2" +" Data! There are "+count[3]+" items in current scope."];
+text_w=["Monitor Device "+ "4_2" +" Data! There are "+hrago_count[4]+" items in current scope.","Monitor Device "+ "6_2" +" Data! There are "+hrago_count[5]+" items in current scope.","Monitor Device "+ "7_2" +" Data! There are "+hrago_count[6]+" items in current scope.","Monitor Device "+ "8_2" +" Data! There are "+hrago_count[7]+" items in current scope."];
+text_m=["Monitor Device "+ "4_2" +" Data! There are "+count[4]+" items in current scope.","Monitor Device "+ "6_2" +" Data! There are "+count[5]+" items in current scope.","Monitor Device "+ "7_2" +" Data! There are "+count[6]+" items in current scope.","Monitor Device "+ "8_2" +" Data! There are "+count[7]+" items in current scope."];
+container=["chartContainer1","chartContainer2","chartContainer3","chartContainer4"];
+var chart_h=[];
+var chart=[];
+var chart_w=[];
+var chart_m=[];
+
+window.onload = function () {
+
+  for(var i=0;i<len/2;i++){
+    chart[i] = new CanvasJS.Chart(container[i],
+    {
+      zoomEnabled: true,
+      //animationEnabled: true,
+      title:{
+        text: text[i]
+      },
+      axisX :{
+        labelAngle: -30
+      },
+      axisY :{
+        includeZero:false
+      },
+      data: data_dump[i]  
+    });  
+    //data[i][0].dataPoints.push({x: Date.now(),y:-100});
+    chart[i].render();
+  }
+  document.getElementById("submit").onclick = function() {submitfun()};
+  function submitfun(){
+    //document.getElementById("hr").innerHTML = "YOU CLICKED ME!";
+    //document.getElementById("d").innerHTML=document.getElementById("timepicker").value;
+    alert(document.getElementById("datepicker").value+"D"+document.getElementById("timepicker").value+" to "+document.getElementById("datepicker_end").value+"D"+document.getElementById("timepicker_end").value);
+    window.open("http://localhost:5004/monitoring_line");
+    //var x=document.getElementById("submit");
+    //x.innerHTML="FFF";
+  }
+  //onclick event [hr]
+  document.getElementById("hr").onclick = function() {myFunction()};
+  function myFunction() {
+      //document.getElementById("hr").innerHTML = "YOU CLICKED ME!";
+      if(time_scale.localeCompare("hour")){
+        time_scale="hour";
+        console.log("[1]"+hrago_count[i]);
+        for(var i=0;i<len/2;i++){
+          chart_h[i] = new CanvasJS.Chart(container[i],
+          {
+            zoomEnabled: true,
+            //animationEnabled: true,
+            title:{
+              text: text_h[i]
+            },
+            axisX :{
+              labelAngle: -30
+            },
+            axisY :{
+              includeZero:false
+            },
+            data: data_hr[i]  
+          }); 
+          chart_h[i].render(); 
+        }
+      }
+
+      console.log("[1-1]"+time_scale);
+  } 
+    //onclick event [month]
+  document.getElementById("d").onclick = function() {myFunction_d()};
+  function myFunction_d() {
+      if(time_scale.localeCompare("day")){
+        time_scale="day";
+        console.log("[2]"+hrago_count[i]);
+        for(var i=0;i<len/2;i++){
+          chart[i] = new CanvasJS.Chart(container[i],
+          {
+            zoomEnabled: true,
+            //animationEnabled: true,
+            title:{
+              text: text[i]
+            },
+            axisX :{
+              labelAngle: -30
+            },
+            axisY :{
+              includeZero:false
+            },
+            data: data[i]  
+          }); 
+          chart[i].render(); 
+        }
+      }
+
+      console.log("[2-2]"+time_scale);
+  }    
+      //onclick event [week]
+  document.getElementById("w").onclick = function() {myFunction_w()};
+  function myFunction_w() {
+      //document.getElementById("hr").innerHTML = "YOU CLICKED ME!";
+      if(time_scale.localeCompare("week")){
+        time_scale="week";
+        console.log("[3]"+hrago_count[i]);
+        for(var i=0;i<len/2;i++){
+          chart_w[i] = new CanvasJS.Chart(container[i],
+          {
+            zoomEnabled: true,
+            //animationEnabled: true,
+            title:{
+              text: text_w[i]
+            },
+            axisX :{
+              labelAngle: -30
+            },
+            axisY :{
+              includeZero:false
+            },
+            data: data_hr[i+4]  
+          }); 
+          chart_w[i].render(); 
+        }
+      }
+
+      console.log("[3-2]"+time_scale);
+  }
+  document.getElementById("m").onclick = function() {myFunction_m()};
+  function myFunction_m() {
+      //document.getElementById("hr").innerHTML = "YOU CLICKED ME!";
+      if(time_scale.localeCompare("month")){
+        time_scale="month";
+        console.log("[4]"+hrago_count[i]);
+        for(var i=0;i<len/2;i++){
+          chart_m[i] = new CanvasJS.Chart(container[i],
+          {
+            zoomEnabled: true,
+            //animationEnabled: true,
+            title:{
+              text: text_m[i]
+            },
+            axisX :{
+              labelAngle: -30
+            },
+            axisY :{
+              includeZero:false
+            },
+            data: data[i+4]  
+          }); 
+          chart_m[i].render(); 
+        }
+      }
+
+      console.log("[4-2]"+time_scale);
+  }      
+}
+
+
+
+         
+
+</script>
+</head>
+<body>
+<div id="chartContainer1" style="height: 300px; width: 100%;"></div>
+<div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+<div id="chartContainer3" style="height: 300px; width: 100%;"></div>
+<div id="chartContainer4" style="height: 300px; width: 100%;"></div>
+</body>
+</html>

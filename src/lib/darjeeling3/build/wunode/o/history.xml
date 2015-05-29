@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="gcc 4.2.1 x86_64-apple-darwin13.2.0 -mmcu=atmega2560 -Os -finline-limit-0 -ggdb -Wall -Werror -std=gnu99 -c -I../../architecture/avr/c -I../../platform/arduino/c -I../../config/wunode/c -I../../core/c -Ic/common -Ic/arduino -Ibuild -I../base/build -I../darjeeling/build -I../darjeeling2/build -I../radio/build -I../vm/build">
+      <target file="jlib_darjeeling3.o" lastModified="1488ccdb6c8">
+         <source file="../../jlib_darjeeling3.c" lastModified="1488ccdb6c8"/>
+      </target>
+      <target file="javax_darjeeling_Darjeeling.o" lastModified="14912a3c4b8">
+         <source file="../../../c/common/javax_darjeeling_Darjeeling.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="darjeeling3_init.o" lastModified="1488ccdb6c8">
+         <source file="../../../c/common/darjeeling3_init.c" lastModified="1487c8ca468"/>
+      </target>
+   </processor>
+</history>

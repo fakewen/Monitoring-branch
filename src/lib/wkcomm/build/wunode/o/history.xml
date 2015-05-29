@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="gcc 4.2.1 x86_64-apple-darwin13.2.0 -mmcu=atmega2560 -Os -finline-limit-0 -ggdb -Wall -Werror -std=gnu99 -c -I../../architecture/avr/c -I../../platform/arduino/c -I../../config/wunode/c -I../../core/c -Ic/common -Ic/arduino -Ibuild -I../base/build -I../darjeeling/build -I../darjeeling2/build -I../radio/build -I../uart/build">
+      <target file="routing_none.o" lastModified="1488ccdbab0">
+         <source file="../../../c/common/routing/routing_none.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wkcomm.o" lastModified="1488ccdbab0">
+         <source file="../../../c/common/wkcomm.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="radio_xbee.o" lastModified="1488ccdbab0">
+         <source file="../../../c/common/radios/radio_xbee.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="radio_zwave_platform_dependent.o" lastModified="1488ccdbab0">
+         <source file="../../../c/arduino/radios/radio_zwave_platform_dependent.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="routing_dsdv.o" lastModified="1488ccdbab0">
+         <source file="../../../c/common/routing/routing_dsdv.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="radio_zwave.o" lastModified="14912a3cc88">
+         <source file="../../../c/common/radios/radio_zwave.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wkcomm_init.o" lastModified="1488ccdbab0">
+         <source file="../../../c/common/wkcomm_init.c" lastModified="1487c8ca468"/>
+      </target>
+   </processor>
+</history>

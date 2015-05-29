@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<div id="chartdiv"></div>
+<style>
+#chartdiv {
+  width : 100%;
+  height  : 500px;
+}   
+</style>
+<body>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/serial.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/none.js"></script>
+<script type="text/javascript" src="http://www.amcharts.com/lib/3/amstock.js"></script>
+<script>
+  var len;
+  var node_id=[];
+  var port_id=[];
+  
+  var his_size=100;
+  var value_chart=[];
+  for(var i=0;i<20;i++){
+    value_chart[i]=[];
+  }
+
+  var time_chart=[];
+  for(var i=0;i<20;i++){
+    time_chart[i]=[];
+  }
+  var tt=1;
+
+{% for index, app in enumerate(applications) %}
+
+              len={{index}}+1;
+              //len='{{ applications[index].id }}';
+              var str='{{ app.id }}';
+              var res=str.split('_');
+              node_id.push(res[0]);
+              port_id.push(res[1]);
+var array_count=0;
+
+              {% for value in applications[index].value_array %}
+                if(array_count<his_size){
+                  value_chart[len-1].unshift({{value}});
+                  array_count++;
+                }
+              {% end %}
+var time_count=0;
+
+              {% for value in applications[index].time_array %}
+                if(time_count<his_size){
+                  time_chart[len-1].unshift({{value}});
+                  time_count++;
+                }
+              {% end %}
+{% end %}
+
+console.log(len);
+
+for (var i=0;i<len;i++){
+  console.log(node_id[i]+"_"+port_id[i]);
+  for(var j=0;j<100;j++){
+    console.log(value_chart[i][j]);
+    //var firstDate = new Date(time_chart[i][j]/1000);
+    console.log(time_chart[i][j]);
+  }
+}
+
+</script>
+
+<script>
+var chartData = [];
+
+generateChartData();
+
+function generateChartData() {
+  var firstDate = new Date(time_chart[0][99]);
+  firstDate.setSeconds(firstDate.getSeconds() - 1*his_size);
+  //firstDate.setHours(0, 0, 0, 0);
+
+  for (var i = 0; i < his_size; i++) {
+    var newDate = new Date(firstDate);
+    newDate.setSeconds(newDate.getSeconds() + i);
+
+    var a1 = value_chart[0][i];
+    var a2 = value_chart[1][i];
+    var a3 = value_chart[2][i];
+    var a4 = value_chart[3][i];
+
+    chartData.push({
+      date: newDate,
+      v1: a1,
+      v2: a2,
+      v3: a3,
+      v4: a4,
+    });
+  }
+}
+
+var chart = AmCharts.makeChart("chartdiv", {
+  type: "stock",
+    pathToImages: "http://www.amcharts.com/lib/3/images/",
+
+  dataSets: [{
+      fieldMappings: [{
+        fromField: "v1",
+        toField: "v1"
+      },{
+        fromField: "v2",
+        toField: "v2"
+      },{
+        fromField: "v3",
+        toField: "v3"
+      },{
+        fromField: "v4",
+        toField: "v4"
+      }],
+      dataProvider: chartData,
+      categoryField: "date",
+      categoryAxis: {
+        "minPeriod": "ss",
+        "parseDates": true
+      }
+    }
+  ],
+
+  panels: [{
+    stockGraphs: [{
+      id: "g1",
+      title: "Entrance",
+      valueField: "v1",
+      valueAxis: "v1",//I change a1 to v1 for setting the same scale
+      lineColor: "#FF6600",
+      useDataSetColors: false
+    },{
+      id: "g2",
+      title: "Workspace",
+      valueField: "v2",
+      valueAxis: "v2",
+      lineColor: "#FCD202",
+      useDataSetColors: false
+    },{
+      id: "g3",
+      title: "DIY",
+      valueField: "v3",
+      valueAxis: "v3",
+      lineColor: "#FCDBF3",
+      useDataSetColors: false
+    },{
+      id: "g4",
+      title: "Tea Table",
+      valueField: "v4",
+      valueAxis: "v4",
+      lineColor: "#0D8ECF",
+      useDataSetColors: false
+    }],
+      valueAxes: [
+        {
+          id: "a1",
+        axisColor: "#FF6600",
+          position: "left",
+        offset: 0
+        },{
+          id: "a2",
+        axisColor: "#FCD202",
+          position: "left",
+        offset: 50
+        },{
+          id: "a3",
+        axisColor: "#FCD202",
+          position: "right",
+        offset: 0
+        },{
+          id: "a4",
+        axisColor: "#0D8ECF",
+          position: "right",
+        offset: 50
+        }
+      ],
+    stockLegend: {}
+  }],
+  panelsSettings: {
+    marginLeft: 100, // inside: false requires that to gain some space
+    marginRight: 100
+  },
+  valueAxesSettings: {
+    axisThickness: 2,
+    gridAlpha: 0,
+    axisAlpha: 1,
+    inside: false
+  },
+
+  chartScrollbarSettings: {},
+
+  chartCursorSettings: {},
+});
+</script>

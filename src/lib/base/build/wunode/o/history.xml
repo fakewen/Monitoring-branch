@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="gcc 4.2.1 x86_64-apple-darwin13.2.0 -mmcu=atmega2560 -Os -finline-limit-0 -ggdb -Wall -Werror -std=gnu99 -c -I../../architecture/avr/c -I../../platform/arduino/c -I../../config/wunode/c -I../../core/c -Ic/common -Ic/arduino -Ibuild -I../darjeeling/build -I../darjeeling2/build -I../radio/build -I../vm/build">
+      <target file="java_lang_System.o" lastModified="14912a3c4b8">
+         <source file="../../../c/common/java_lang_System.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="base_init.o" lastModified="1488ccdb2e0">
+         <source file="../../../c/common/base_init.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="java_lang_Runtime.o" lastModified="14912a3c4b8">
+         <source file="../../../c/common/java_lang_Runtime.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="java_lang_String.o" lastModified="14912a3c4b8">
+         <source file="../../../c/common/java_lang_String.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="java_lang_Integer.o" lastModified="14912a3c4b8">
+         <source file="../../../c/common/java_lang_Integer.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="java_lang_Thread.o" lastModified="14912a3c4b8">
+         <source file="../../../c/common/java_lang_Thread.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="javax_darjeeling_vm_Infusion.o" lastModified="14912a3c4b8">
+         <source file="../../../c/common/javax_darjeeling_vm_Infusion.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="jlib_base.o" lastModified="1488ccdb2e0">
+         <source file="../../jlib_base.c" lastModified="1488ccda728"/>
+      </target>
+      <target file="java_lang_Object.o" lastModified="14912a3c4b8">
+         <source file="../../../c/common/java_lang_Object.c" lastModified="1487c8ca468"/>
+      </target>
+   </processor>
+</history>

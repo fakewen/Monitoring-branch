@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="gcc 4.2.1 x86_64-apple-darwin13.2.0 -mmcu=atmega2560 -Os -finline-limit-0 -ggdb -Wall -Werror -std=gnu99 -c -I../../architecture/avr/c -I../../platform/arduino/c -Ic -I../../core/c -I. -I../../lib/vm/build -I../../lib/base/build -I../../lib/darjeeling3/build -I../../lib/uart/build -I../../lib/wkcomm/build -I../../lib/wkreprog/build -I../../lib/wkpf/build -I../../lib/wkpf_virtual/build">
+      <target file="GENERATEDlibinit.o" lastModified="14912a3e7e0">
+         <source file="../GENERATEDlibinit.c" lastModified="14912a3e3f8"/>
+      </target>
+      <target file="main.o" lastModified="14912a3e7e0">
+         <source file="../../c/main.c" lastModified="1487c8ca468"/>
+      </target>
+   </processor>
+</history>

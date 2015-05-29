@@ -1,0 +1,13 @@
+<project default="all">
+
+	<!-- set the name of the library -->
+	<property name="name" value="wknode"/>
+	
+	<!-- list of libraries this library depends on -->
+	<property name="lib-c-depends" value=""/>
+	<property name="lib-java-depends" value="base"/>
+	
+	<!-- include the library build template -->
+	<import file="../lib.xml"/>
+
+</project>

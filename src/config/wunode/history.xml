@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="4.2.1 -Wl,--cref,-Map,darjeeling-avr.map --section-start=.reprogram_flash_page=0x3F000 -mmcu=atmega2560">
+      <target file="darjeeling.elf" lastModified="14912a3e7e0">
+         <source file="darjeeling.a" lastModified="14912a3e7e0"/>
+      </target>
+   </processor>
+</history>

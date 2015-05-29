@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="gcc 4.2.1 x86_64-apple-darwin13.2.0 -mmcu=atmega2560 -Os -finline-limit-0 -ggdb -Wall -Werror -std=gnu99 -c -I../../architecture/avr/c -I../../platform/arduino/c -I../../config/wunode/c -I../../core/c -Ic/common -Ic/arduino -Ibuild -I../base/build -I../darjeeling/build -I../darjeeling2/build -I../radio/build -I../wkcomm/build">
+      <target file="wkreprog_init.o" lastModified="14912a3d070">
+         <source file="../../../c/common/wkreprog_init.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wkreprog.o" lastModified="1488ccdbe98">
+         <source file="../../../c/common/wkreprog.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wkreprog_impl.o" lastModified="1488ccdbe98">
+         <source file="../../../c/arduino/wkreprog_impl.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wkreprog_comm.o" lastModified="14912a3d070">
+         <source file="../../../c/common/wkreprog_comm.c" lastModified="1487c8ca468"/>
+      </target>
+   </processor>
+</history>

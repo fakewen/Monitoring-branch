@@ -1,0 +1,23 @@
+<WuKong>
+    <WuClass name="Or_Gate" appCanCreateInstances="true"/>
+    <WuClass name="LED" appCanCreateInstances="false">
+        <CreateInstance />
+    </WuClass>
+    <WuClass name="PIR_Sensor" appCanCreateInstances="false">
+        <CreateInstance />
+    </WuClass>
+    <WuClass name="IR_Sensor" appCanCreateInstances="false">
+        <CreateInstance />
+    </WuClass>
+    <WuClass name="Ultrasound_Sensor" appCanCreateInstances="false">
+        <CreateInstance />
+    </WuClass>
+    <WuClass name="Magnetic_Sensor" appCanCreateInstances="false">
+        <CreateInstance>
+            <Property name="__pin" value="PIN1"/>
+        </CreateInstance>
+        <CreateInstance>
+            <Property name="__pin" value="PIN2"/>
+        </CreateInstance>
+    </WuClass>
+</WuKong>

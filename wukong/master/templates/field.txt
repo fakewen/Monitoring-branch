@@ -1,0 +1,6 @@
+_id
+timestamp
+value
+node_id
+wuclass_id
+port

@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dependencies>
+   <includePath signature="/I../../architecture/avr/c /I../../platform/arduino/c /I../../config/wunode/c /I../../core/c /Ic/common /Ic/arduino /Ibuild /I../darjeeling/build /I../darjeeling2/build /I../radio/build /I../vm/build">
+      <source file="../../jlib_base.h" lastModified="1488ccda728">
+         <include file="../../../../../core/c/types.h"/>
+      </source>
+      <source file="../../../../vm/build/global_id.h" lastModified="14912a3c0d0">
+         <include file="../../../../../core/c/types.h"/>
+         <include file="../../../../vm/build/object.h"/>
+      </source>
+      <source file="../../../../vm/build/execution.h" lastModified="14912a3c0d0">
+         <include file="../../../../../core/c/types.h"/>
+         <include file="../../../../vm/build/vmthread.h"/>
+         <include file="../../../../vm/build/vm.h"/>
+         <include file="../../../../vm/build/object.h"/>
+         <include file="../../../../../config/wunode/c/config.h"/>
+      </source>
+      <source file="../../../c/common/java_lang_String.c" lastModified="1487c8ca468">
+         <include file="../../../../vm/build/array.h"/>
+         <include file="../../../../../core/c/heap.h"/>
+         <include file="../../../../vm/build/execution.h"/>
+         <include file="../../jlib_base.h"/>
+         <sysinclude file="../../../../../../../../../../usr/include/string.h"/>
+      </source>
+      <source file="../../../c/common/base_init.c" lastModified="1487c8ca468">
+      </source>
+      <source file="../../jlib_base.c" lastModified="1488ccda728">
+         <include file="../../../../../core/c/types.h"/>
+      </source>
+      <source file="../../../../../config/wunode/c/config.h" lastModified="1487c8ca850">
+      </source>
+      <source file="../../../../../core/c/heap.h" lastModified="1487c8ca468">
+         <include file="../../../../../config/wunode/c/config.h"/>
+         <include file="../../../../../core/c/types.h"/>
+         <include file="../../../../../core/c/hooks.h"/>
+      </source>
+      <source file="../../../../../architecture/avr/c/program_mem.h" lastModified="1487c8ca850">
+      </source>
+      <source file="../../../c/common/javax_darjeeling_vm_Infusion.c" lastModified="1487c8ca468">
+         <include file="../../../../vm/build/execution.h"/>
+         <include file="../../../../vm/build/global_id.h"/>
+         <include file="../../../../../core/c/debug.h"/>
+         <include file="../../../../../core/c/heap.h"/>
+         <include file="../../../../../core/c/panic.h"/>
+         <include file="../../../../vm/build/array.h"/>
+         <include file="../../jlib_base.h"/>
+      </source>
+      <source file="../../../../../core/c/panic.h" lastModified="1487c8ca468">
+         <include file="../../../../../core/c/types.h"/>
+         <include file="../../../../../core/c/core.h"/>
+      </source>
+      <source file="../../../c/common/java_lang_Integer.c" lastModified="1487c8ca468">
+         <include file="../../../../../core/c/heap.h"/>
+         <include file="../../../../vm/build/execution.h"/>
+         <include file="../../../../../core/c/panic.h"/>
+         <include file="../../jlib_base.h"/>
+         <sysinclude file="../../../../../../../../../../usr/include/string.h"/>
+         <sysinclude file="../../../../../../../../../../usr/include/stdio.h"/>
+      </source>
+      <source file="../../../../../core/c/types.h" lastModified="1487c8ca468">
+         <include file="../../../../../config/wunode/c/config.h"/>
+         <include file="../../../../../architecture/avr/c/program_mem.h"/>
+         <include file="../../../../../architecture/avr/c/pointerwidth.h"/>
+         <sysinclude file="../../../../../../../../../../usr/include/stddef.h"/>
+         <sysinclude file="../../../../../../../../../../usr/include/stdbool.h"/>
+         <sysinclude file="../../../../../../../../../../usr/include/stdint.h"/>
+      </source>
+      <source file="../../../c/common/java_lang_System.c" lastModified="1487c8ca468">
+         <include file="../../../../../core/c/types.h"/>
+         <include file="../../../../vm/build/execution.h"/>
+         <include file="../../../../vm/build/global_id.h"/>
+         <include file="../../../../vm/build/array.h"/>
+         <include file="../../../../../core/c/heap.h"/>
+         <include file="../../../../../core/c/panic.h"/>
+         <include file="../../../../../core/c/djtimer.h"/>
+         <include file="../../../../../architecture/avr/c/pointerwidth.h"/>
+         <include file="../../jlib_base.h"/>
+         <sysinclude file="../../../../../../../../../../usr/include/stddef.h"/>
+         <sysinclude file="../../../../../../../../../../usr/include/string.h"/>
+      </source>
+      <source file="../../../../../architecture/avr/c/pointerwidth.h" lastModified="1487c8ca468">
+      </source>
+      <source file="../../../../../core/c/debug.h" lastModified="1487c8ca468">
+         <include file="../../../../../config/wunode/c/config.h"/>
+         <sysinclude file="../../../../../../../../../../usr/include/stdio.h"/>
+      </source>
+      <source file="../../../c/common/java_lang_Thread.c" lastModified="1487c8ca468">
+         <include file="../../../../vm/build/execution.h"/>
+         <include file="../../../../vm/build/global_id.h"/>
+         <include file="../../../../../core/c/debug.h"/>
+         <include file="../../../../../core/c/heap.h"/>
+         <include file="../../../../../core/c/panic.h"/>
+         <include file="../../../../../architecture/avr/c/pointerwidth.h"/>
+         <include file="../../jlib_base.h"/>
+         <sysinclude file="../../../../../../../../../../usr/include/stddef.h"/>
+      </source>
+      <source file="../../../../vm/build/array.h" lastModified="14912a3c0d0">
+         <include file="../../../../../config/wunode/c/config.h"/>
+         <include file="../../../../../core/c/types.h"/>
+      </source>
+      <source file="../../../c/common/java_lang_Object.c" lastModified="1487c8ca468">
+         <include file="../../../../vm/build/execution.h"/>
+         <include file="../../../../vm/build/array.h"/>
+         <include file="../../../../vm/build/vmthread.h"/>
+         <include file="../../../../vm/build/vm.h"/>
+         <include file="../../../../../architecture/avr/c/pointerwidth.h"/>
+         <include file="../../../../vm/build/jstring.h"/>
+         <include file="../../jlib_base.h"/>
+         <sysinclude file="../../../../../../../../../../usr/include/stddef.h"/>
+         <sysinclude file="../../../../../../../../../../usr/include/string.h"/>
+      </source>
+      <source file="../../../c/common/java_lang_Runtime.c" lastModified="1487c8ca468">
+         <include file="../../../../vm/build/execution.h"/>
+         <include file="../../../../vm/build/global_id.h"/>
+         <include file="../../../../../core/c/debug.h"/>
+         <include file="../../../../../core/c/heap.h"/>
+         <include file="../../../../../core/c/djtimer.h"/>
+         <include file="../../../../../architecture/avr/c/pointerwidth.h"/>
+         <include file="../../jlib_base.h"/>
+         <sysinclude file="../../../../../../../../../../usr/include/stddef.h"/>
+      </source>
+   </includePath>
+</dependencies>

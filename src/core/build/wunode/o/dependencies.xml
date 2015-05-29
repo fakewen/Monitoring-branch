@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dependencies>
+   <includePath signature="/Ic /I../architecture/avr/c /I../platform/arduino/c /I../config/wunode/c /I../lib/base/build /I../lib/darjeeling/build">
+      <source file="../../../../architecture/avr/c/program_mem.h" lastModified="1487c8ca850">
+      </source>
+      <source file="../../../c/djarchive.h" lastModified="1487c8ca468">
+         <include file="../../../../architecture/avr/c/program_mem.h"/>
+         <include file="../../../c/types.h"/>
+      </source>
+      <source file="../../../c/djtimer.h" lastModified="1487c8ca468">
+         <include file="../../../c/types.h"/>
+      </source>
+      <source file="../../../c/heap.h" lastModified="1487c8ca468">
+         <include file="../../../../config/wunode/c/config.h"/>
+         <include file="../../../c/types.h"/>
+         <include file="../../../c/hooks.h"/>
+      </source>
+      <source file="../../../c/core.c" lastModified="1487c8ca468">
+         <include file="../../../c/core.h"/>
+         <include file="../../../c/types.h"/>
+         <include file="../../../c/hooks.h"/>
+         <include file="../../../c/heap.h"/>
+         <include file="../../../c/djtimer.h"/>
+      </source>
+      <source file="../../../c/debug.h" lastModified="1487c8ca468">
+         <include file="../../../../config/wunode/c/config.h"/>
+         <sysinclude file="../../../../../../../../../usr/include/stdio.h"/>
+      </source>
+      <source file="../../../c/djarchive.c" lastModified="1487c8ca468">
+         <include file="../../../c/djarchive.h"/>
+      </source>
+      <source file="../../../c/hooks.h" lastModified="1487c8ca468">
+      </source>
+      <source file="../../../../architecture/avr/c/pointerwidth.h" lastModified="1487c8ca468">
+      </source>
+      <source file="../../../c/heap.c" lastModified="1487c8ca468">
+         <include file="../../../../config/wunode/c/config.h"/>
+         <include file="../../../c/core.h"/>
+         <include file="../../../c/heap.h"/>
+         <include file="../../../c/debug.h"/>
+         <include file="../../../c/panic.h"/>
+         <include file="../../../c/hooks.h"/>
+         <sysinclude file="../../../../../../../../../usr/include/string.h"/>
+      </source>
+      <source file="../../../c/types.h" lastModified="1487c8ca468">
+         <include file="../../../../config/wunode/c/config.h"/>
+         <include file="../../../../architecture/avr/c/program_mem.h"/>
+         <include file="../../../../architecture/avr/c/pointerwidth.h"/>
+         <sysinclude file="../../../../../../../../../usr/include/stddef.h"/>
+         <sysinclude file="../../../../../../../../../usr/include/stdbool.h"/>
+         <sysinclude file="../../../../../../../../../usr/include/stdint.h"/>
+      </source>
+      <source file="../../../c/panic.h" lastModified="1487c8ca468">
+         <include file="../../../c/types.h"/>
+         <include file="../../../c/core.h"/>
+      </source>
+      <source file="../../../c/hooks.c" lastModified="1487c8ca468">
+         <include file="../../../c/hooks.h"/>
+         <include file="../../../c/types.h"/>
+         <include file="../../../c/debug.h"/>
+      </source>
+      <source file="../../../../config/wunode/c/config.h" lastModified="1487c8ca850">
+      </source>
+      <source file="../../../c/panic.c" lastModified="1487c8ca468">
+         <include file="../../../c/panic.h"/>
+         <include file="../../../c/debug.h"/>
+         <include file="../../../c/hooks.h"/>
+         <include file="../../../c/core.h"/>
+         <sysinclude file="../../../../../../../../../usr/include/stdlib.h"/>
+      </source>
+      <source file="../../../c/core.h" lastModified="1487c8ca468">
+         <include file="../../../c/types.h"/>
+         <include file="../../../c/hooks.h"/>
+      </source>
+   </includePath>
+</dependencies>

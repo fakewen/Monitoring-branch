@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="gcc 4.2.1 x86_64-apple-darwin13.2.0 -mmcu=atmega2560 -Os -finline-limit-0 -ggdb -Wall -Werror -std=gnu99 -c -I../../architecture/avr/c -I../../platform/arduino/c -I../../config/wunode/c -I../../core/c -Ic/common -Ic/arduino -Ibuild -I../base/build -I../darjeeling/build -I../darjeeling2/build -I../radio/build -I../wkcomm/build -I../wkreprog/build">
+      <target file="wkpf_main.o" lastModified="14912a3dc28">
+         <source file="../../../c/common/wkpf_main.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="GENERATEDwuclass_multiplexer.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_multiplexer.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="wuclass_if_short_update.o" lastModified="14912a3d458">
+         <source file="../../../c/common/native_wuclasses/wuclass_if_short_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wuclass_xor_gate_update.o" lastModified="14912a3d458">
+         <source file="../../../c/common/native_wuclasses/wuclass_xor_gate_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="GENERATEDwuclass_fan.o" lastModified="14912a3d458">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_fan.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="wkpf_wuclasses.o" lastModified="1488ccdc668">
+         <source file="../../../c/common/wkpf_wuclasses.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="GENERATEDwuclass_if_boolean.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_if_boolean.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="GENERATEDwuclass_server.o" lastModified="14912a3d070">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_server.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="wuclass_math_update.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/wuclass_math_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wuclass_ir_sensor_update.o" lastModified="14912a3d840">
+         <source file="../../../c/arduino/native_wuclasses/wuclass_ir_sensor_update.c" lastModified="1488cde6838"/>
+      </target>
+      <target file="GENERATEDwuclass_math_op.o" lastModified="14912a3d458">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_math_op.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="wuclass_condition_selector_short_update.o" lastModified="14912a3d458">
+         <source file="../../../c/common/native_wuclasses/wuclass_condition_selector_short_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wuclass_if_boolean_update.o" lastModified="14912a3dc28">
+         <source file="../../../c/common/native_wuclasses/wuclass_if_boolean_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="GENERATEDwuclass_xor_gate.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_xor_gate.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="GENERATEDwuclass_led.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_led.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="wkpf_properties.o" lastModified="1488ccdc668">
+         <source file="../../../c/common/wkpf_properties.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wiring_shift.o" lastModified="1488ccdc280">
+         <source file="../../../c/arduino/native_wuclasses/temperature_humidity_sensor/wiring_shift.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="GENERATEDwuclass_ultrasound_sensor.o" lastModified="14912a3dc28">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_ultrasound_sensor.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="GENERATEDwuclass_not_gate.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_not_gate.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="wuclass_slider_update.o" lastModified="14912a3d458">
+         <source file="../../../c/arduino/native_wuclasses/wuclass_slider_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wuclass_light_sensor_update.o" lastModified="14912a3d458">
+         <source file="../../../c/arduino/native_wuclasses/wuclass_light_sensor_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wuclass_light_actuator_update.o" lastModified="14912a3d840">
+         <source file="../../../c/arduino/native_wuclasses/wuclass_light_actuator_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wuclass_gh_sensor_update.o" lastModified="14912a3d840">
+         <source file="../../../c/arduino/native_wuclasses/wuclass_gh_sensor_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="SHT1x.o" lastModified="1488ccdc668">
+         <source file="../../../c/arduino/native_wuclasses/temperature_humidity_sensor/SHT1x.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="GENERATEDwuclass_slider.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_slider.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="GENERATEDwuclass_ir_sensor.o" lastModified="14912a3d458">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_ir_sensor.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="wuclass_threshold_update.o" lastModified="14912a3d458">
+         <source file="../../../c/common/native_wuclasses/wuclass_threshold_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wuclass_not_gate_update.o" lastModified="14912a3d458">
+         <source file="../../../c/common/native_wuclasses/wuclass_not_gate_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wuclass_and_gate_update.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/wuclass_and_gate_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="GENERATEDwuclass_gh_sensor.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_gh_sensor.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="wkpf_config.o" lastModified="14912a3d840">
+         <source file="../../../c/arduino/wkpf_config.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wuclass_ultrasound_sensor_update.o" lastModified="14912a3d840">
+         <source file="../../../c/arduino/native_wuclasses/wuclass_ultrasound_sensor_update.c" lastModified="148a12a0e28"/>
+      </target>
+      <target file="GENERATEDwuclass_condition_selector_short.o" lastModified="14912a3d458">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_condition_selector_short.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="GENERATEDnative_wuclasses.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/GENERATEDnative_wuclasses.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="wuclass_pressure_sensor_0_update.o" lastModified="14912a3d840">
+         <source file="../../../c/arduino/native_wuclasses/wuclass_pressure_sensor_0_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="GENERATEDwuclass_or_gate.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_or_gate.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="GENERATEDwuclass_threshold.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_threshold.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="wuclass_binary_sensor_update.o" lastModified="14912a3d458">
+         <source file="../../../c/arduino/native_wuclasses/wuclass_binary_sensor_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wkpf_gc.o" lastModified="1488ccdc668">
+         <source file="../../../c/common/wkpf_gc.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wuclass_temperature_humidity_sensor_update.o" lastModified="14912a3d840">
+         <source file="../../../c/arduino/native_wuclasses/wuclass_temperature_humidity_sensor_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wuclass_fan_update.o" lastModified="14912a3d840">
+         <source file="../../../c/arduino/native_wuclasses/wuclass_fan_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="GENERATEDwuclass_pir_sensor.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_pir_sensor.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="wkpf_init.o" lastModified="14912a3d458">
+         <source file="../../../c/common/wkpf_init.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wuclass_LED_update.o" lastModified="14912a3d458">
+         <source file="../../../c/arduino/native_wuclasses/wuclass_LED_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="GENERATEDwuclass_temperature_humidity_sensor.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_temperature_humidity_sensor.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="GENERATEDwuclass_condition_selector_boolean.o" lastModified="14912a3d458">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_condition_selector_boolean.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="wiring.o" lastModified="1488ccdc280">
+         <source file="../../../c/arduino/native_wuclasses/temperature_humidity_sensor/wiring.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wuclass_magnetic_sensor_update.o" lastModified="14912a3d840">
+         <source file="../../../c/arduino/native_wuclasses/wuclass_magnetic_sensor_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="GENERATEDwuclass_light_sensor.o" lastModified="14912a3d458">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_light_sensor.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="wuclass_or_gate_update.o" lastModified="14912a3d458">
+         <source file="../../../c/common/native_wuclasses/wuclass_or_gate_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wkpf_links.o" lastModified="14912a3d458">
+         <source file="../../../c/common/wkpf_links.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="pins_arduino.o" lastModified="1488ccdc280">
+         <source file="../../../c/arduino/native_wuclasses/temperature_humidity_sensor/pins_arduino.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wkpf_comm.o" lastModified="14912a3dc28">
+         <source file="../../../c/common/wkpf_comm.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="wkpf_wuobjects.o" lastModified="14912a3d458">
+         <source file="../../../c/common/wkpf_wuobjects.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="GENERATEDwuclass_pressure_sensor_0.o" lastModified="14912a3dc28">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_pressure_sensor_0.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="wuclass_pir_sensor.o" lastModified="14912a3d840">
+         <source file="../../../c/arduino/native_wuclasses/wuclass_pir_sensor.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="GENERATEDwuclass_binary_sensor.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_binary_sensor.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="wuclass_condition_selector_boolean_update.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/wuclass_condition_selector_boolean_update.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="GENERATEDwuclass_magnetic_sensor.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_magnetic_sensor.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="GENERATEDwuclass_and_gate.o" lastModified="14912a3d458">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_and_gate.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="wiring_digital.o" lastModified="1488ccdc280">
+         <source file="../../../c/arduino/native_wuclasses/temperature_humidity_sensor/wiring_digital.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="GENERATEDwuclass_light_actuator.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_light_actuator.c" lastModified="14912a3d070"/>
+      </target>
+      <target file="GENERATEDwuclass_if_short.o" lastModified="14912a3d840">
+         <source file="../../../c/common/native_wuclasses/GENERATEDwuclass_if_short.c" lastModified="14912a3d070"/>
+      </target>
+   </processor>
+</history>

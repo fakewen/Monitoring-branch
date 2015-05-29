@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="gcc 4.2.1 x86_64-apple-darwin13.2.0 -mmcu=atmega2560 -Os -finline-limit-0 -ggdb -Wall -Werror -std=gnu99 -c -Ic -I../architecture/avr/c -I../platform/arduino/c -I../config/wunode/c -I../lib/base/build -I../lib/darjeeling/build">
+      <target file="core.o" lastModified="1488ccdd220">
+         <source file="../../../c/core.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="hooks.o" lastModified="1488ccdd220">
+         <source file="../../../c/hooks.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="panic.o" lastModified="1488ccdd220">
+         <source file="../../../c/panic.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="djarchive.o" lastModified="1488ccdd220">
+         <source file="../../../c/djarchive.c" lastModified="1487c8ca468"/>
+      </target>
+      <target file="heap.o" lastModified="1488ccdd220">
+         <source file="../../../c/heap.c" lastModified="1487c8ca468"/>
+      </target>
+   </processor>
+</history>

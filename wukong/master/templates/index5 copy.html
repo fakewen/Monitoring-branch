@@ -1,0 +1,43 @@
+
+<script type="text/javascript" src="/static/js/canvasjs.min.js"></script>
+<script>
+//window.onload = function () {
+data=[
+        { x: 10, y: 71 },
+        { x: 20, y: 55},
+        { x: 30, y: 50 },
+        { x: 40, y: 65 },
+        { x: 50, y: 95 },
+        { x: 60, y: 68 },
+        { x: 70, y: 28 },
+        { x: 80, y: 34 },
+        { x: 90, y: 14}
+        ];
+var chart1 = new CanvasJS.Chart("chartContainer1",
+  {
+        
+      data: [
+      {
+        type: "column",
+        dataPoints:data 
+      }
+      ]
+    });
+
+var chart2 = new CanvasJS.Chart("chartContainer2",
+  {
+        
+      data: [
+      {
+        type: "line",
+        dataPoints: data
+      }
+      ]
+    });
+
+chart1.render();
+chart2.render();
+//}
+</script>
+<div id="chartContainer1" style="height: 260px; width: 100%;"></div>
+<div id="chartContainer2" style="height: 260px; width: 100%;"></div>

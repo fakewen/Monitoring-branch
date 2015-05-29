@@ -1,0 +1,89 @@
+
+<html>
+	<head>
+		<link type="text/css" href="/static/css/smoothness/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" />
+		<link type="text/css" href="/static/css/jquery.contextMenu.css" rel="stylesheet" />
+		<link type="text/css" href="/static/css/fbp.css" rel="stylesheet" />
+		<link type="text/css" href="/static/css/jquery.treeview.css" rel="stylesheet"/>
+		<script type="text/javascript" src="/static/js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="/static/js/jquery-ui-1.9.2.custom.min.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.contextMenu.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.treeview.js"></script>
+		<script type="text/javascript" src="/static/js/jcanvas.js"></script>
+		<script type="text/javascript" src="/static/js/json2.js"></script>
+		<script type="text/javascript" src="/static/js/block.js"></script>
+		<script type="text/javascript" src="/static/js/line.js"></script>
+		<script type="text/javascript" src="/static/js/fbp.js"></script>
+		<script type="text/javascript" src="/static/js/flowlist.js"></script>
+		<script type="text/javascript" src="/static/js/ace/ace.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__and_gate.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__binary_sensor.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__condition_selector_boolean.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__condition_selector_short.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__fan.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__gh_sensor.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__if_boolean.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__if_short.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__ir_sensor.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__led.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__light_actuator.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__light_sensor.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__magnetic_sensor.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__math_op.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__multiplexer.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__not_gate.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__or_gate.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__pir_sensor.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__pressure_sensor_0.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__server.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__slider.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__temperature_humidity_sensor.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__threshold.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__ultrasound_sensor.js"></script>
+		<script type="text/javascript" src="/static/js/__comp__xor_gate.js"></script>
+	</head>
+	<body style="overflow:hidden">
+		<canvas id=canvas style="position:absolute; left:205; top:50;" height=600 width=2000></canvas>
+		<div id=client></div>
+		<canvas id=canvastop style="position:absolute; left:0; top:50;" height=600 width=2000></canvas>
+		<div id=connection>
+		<table>
+		<tr><td>From</td></tr>
+		<tr>
+		<td><select id=connection_src></select></td>
+		</tr>
+		<tr><td>To</td></tr>
+		<tr>
+		<td><select id=connection_act></select></td>
+		</tr>
+		</table>
+		</div>
+		<div id=msg style="position:absolute;background-color:#ffff00"></div>
+		<div id=fileloader>
+		<input type=text id=fileloader_file></input>
+		</div>
+		<div id=propertyeditor>
+		<div> Location Policy</div>
+		<input type=text id=propertyeditor_location></input>
+<div id=propertyeditor_loc>Location: <input type=text id=propertyeditor_location_hierarchy size=35></input><button class="chooseLocNode" for="propertyeditor_location_hierarchy">Choose Tree Node</button><br>Function: <input type=text id=propertyeditor_location_function size=35></input></div>		</div>
+		<div id="progress"><div id="compile_status"></div>
+		<div id="normal"></div><div id="critical_error"></div>
+		<div id="urgent_error"></div></div>
+<div class="modal ui-widget-content" id="tree_dialog" role="dialog" style="display:none">
+		<div class="modal-header">
+		<h3>Choose a node</h3>
+		</div>
+		<div class="modal-body">
+		<div id="treeInDialogDiv">
+		<ul id="treeInDialog" class="treeview">
+		</ul>
+		</div>
+		Selected TreeNode: <input id = "selectedTreeNode" type=text size="20"/>
+		</div>
+		<div class="modal-footer">
+		<button id="confirm_tree_dialog" data-dismiss="modal" class="dialogCloseButton">Select</button>
+		<button data-dismiss="modal" class="dialogCloseButton">Close</button>
+		</div>
+		</div>
+	</body>
+</html>
